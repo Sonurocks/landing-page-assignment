@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MUREC - Premium Real Estate Landing Page
 
-## Getting Started
+A modern, highly-optimized, and fully responsive frontend redesign of the Murec website, taking design and UX inspiration from the premium aesthetic of Timeless.club.
 
-First, run the development server:
+## 🚀 Live Demo
+**[https://murec-app-one.vercel.app/](https://murec-app-one.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎨 Design Philosophy & Approach
+This project was built to convey a sense of **luxury, legacy, and trust**. 
+- **Typography:** Meticulously paired elegant Serif fonts (Playfair Display) for headings to convey heritage, with clean Sans-Serif fonts (Outfit/System) for high legibility in body text.
+- **Animations:** Implemented fluid, scroll-linked animations using Framer Motion to create a cinematic, engaging browsing experience without overwhelming the user.
+- **Smart Navigation:** Built a scroll-aware navbar that hides when reading downwards (maximizing screen real estate) and instantly reappears when scrolling up.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Performance & Optimization
+- **Next/Image:** All static assets are served using Next.js `<Image>` component for automatic WebP conversion, lazy loading, and exact aspect-ratio mapping to prevent Cumulative Layout Shift (CLS).
+- **Video Backgrounds:** Optimized looping background videos for the Hero section with proper `playsInline` and `muted` attributes for immediate cross-browser autoplay.
+- **Component Reusability:** Abstracted UI elements (like the pill-shaped `<Button />` component) to maintain a DRY, scalable, and highly maintainable codebase.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📱 Responsive Design
+The UI is built with a mobile-first approach using Tailwind CSS. It smoothly transitions from a stacked mobile layout to a sophisticated multi-column grid on desktops, ensuring perfect usability across all device breakpoints.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
+- **Framework:** Next.js (React)
+- **Styling:** Tailwind CSS (v4)
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Language:** TypeScript
 
-## Learn More
+## ⚙️ Local Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd murec-app
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or yarn install / pnpm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.

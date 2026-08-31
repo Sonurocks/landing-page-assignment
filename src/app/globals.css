@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Core palette */
+  --background: #060606;
+  --foreground: #f5f0eb;
+
+  /* Brand colors */
+  --gold: #c9a96e;
+  --gold-light: #dfc495;
+  --gold-dark: #a8853e;
+  --charcoal: #1a1a1a;
+  --charcoal-light: #2a2a2a;
+  --silver: #b0b0b0;
+  --muted: #888888;
+  --cream: #f5f0eb;
+  --cream-dark: #e8dfd4;
+
+  /* Spacing scale */
+  --section-padding: clamp(4rem, 10vw, 8rem);
+  --container-max: 1400px;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--background);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===========================
+   Typography Utilities
+   =========================== */
+.heading-xl {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.heading-lg {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+}
+
+.heading-md {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--cream);
+}
+
+.heading-sm {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.body-text {
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
+  line-height: 1.8;
+  color: var(--silver);
+  max-width: 60ch;
+}
+
+.body-text-sm {
+  font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ===========================
+   Custom Button Styles
+   =========================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.btn-primary:hover::before {
+  width: 100%;
+}
+
+.btn-primary:hover {
+  color: var(--background);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Custom Scrollbar
+   =========================== */
+
+
+/* ===========================
+   Divider Line
+   =========================== */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--charcoal-light) 20%,
+    var(--charcoal-light) 80%,
+    transparent
+  );
+}
+
+/* ===========================
+   Glass Effect
+   =========================== */
+.glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+/* ===========================
+   Reveal animation for scroll
+   =========================== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 6, 6, 0.3) 0%,
+    rgba(6, 6, 6, 0.6) 100%
+  );
+  pointer-events: none;
 }
