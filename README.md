@@ -3,7 +3,7 @@
 A modern, highly-optimized, and fully responsive frontend redesign of the Murec website, taking design and UX inspiration from the premium aesthetic of Timeless.club.
 
 ## 🚀 Live Demo
-**[https://murec-app-one.vercel.app/](https://murec-app-one.vercel.app/)**
+**[https://murec-app-gules.vercel.app](https://murec-app-gules.vercel.app)**
 
 ## 🎨 Design Philosophy & Approach
 This project was built to convey a sense of **luxury, legacy, and trust**. 
