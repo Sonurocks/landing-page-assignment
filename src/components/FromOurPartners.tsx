@@ -21,12 +21,12 @@ export default function FromOurPartners() {
             From Our Partners
           </h2>
         </motion.div>
-        <div className="w-full grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+        <div className="w-full flex lg:grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 overflow-x-auto snap-x snap-mandatory pb-8 lg:pb-0 -mx-6 md:-mx-10 px-6 md:px-10 lg:mx-0 lg:px-0" style={{ scrollbarWidth: "none" }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] grid sm:grid-cols-[40%_1fr] gap-0 sm:gap-8 lg:gap-12 min-h-[380px] overflow-hidden"
+            className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] grid sm:grid-cols-[40%_1fr] gap-0 sm:gap-8 lg:gap-12 min-h-[380px] overflow-hidden min-w-[85vw] md:min-w-[70vw] lg:min-w-0 snap-center shrink-0"
           >
             <div className="w-full min-h-[300px] sm:min-h-0 sm:h-full relative">
               <Image
@@ -47,7 +47,7 @@ export default function FromOurPartners() {
                 </p>
               </div>
               <div>
-                <Image src="/assets/05.png" alt="Bobby Mukherrji Architects" width={300} height={100} className="h-[40px] w-auto object-contain object-left" />
+                <Image src="/assets/associations/o5.png" alt="Bobby Mukherrji Architects" width={300} height={100} className="h-[40px] w-auto object-contain object-left" />
               </div>
             </div>
           </motion.div>
@@ -55,7 +55,7 @@ export default function FromOurPartners() {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] grid sm:grid-cols-[40%_1fr] gap-0 sm:gap-8 lg:gap-12 min-h-[380px] overflow-hidden"
+            className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] grid sm:grid-cols-[40%_1fr] gap-0 sm:gap-8 lg:gap-12 min-h-[380px] overflow-hidden min-w-[85vw] md:min-w-[70vw] lg:min-w-0 snap-center shrink-0"
           >
             <div className="w-full min-h-[300px] sm:min-h-0 sm:h-full relative">
               <Image
